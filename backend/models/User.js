@@ -24,4 +24,8 @@ const userSchema=new Schema({
     }
     //the schema that we created will be used in our routes
 })
-module.exports=mongoose.model('user',userSchema)
+
+const User=mongoose.model('user',userSchema)
+//saving data in users collection of database 
+User.createIndexes
+module.exports=User
