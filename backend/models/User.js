@@ -27,5 +27,5 @@ const userSchema=new Schema({
 
 const User=mongoose.model('user',userSchema)
 //saving data in users collection of database 
-User.createIndexes
+
 module.exports=User
