@@ -5,12 +5,11 @@
   font-family: "Tilt Neon", sans-serif;
 }
  nav{
-     background-color: #7431FA; 
-    height: 62px;
+     background-color: #7431FA ; 
     font-family: "Tilt Neon", sans-serif;
 } 
-body {
-    padding-top: 56px;
-    color:rgb(186, 186, 186);
-    background-color: #212529;
-  } 
+.active1:hover{
+  border-bottom: 2px solid white;
+}
+/* #7431FA */
+
