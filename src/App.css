@@ -12,4 +12,6 @@
   border-bottom: 2px solid white;
 }
 /* #7431FA */
-
+i{
+  cursor: pointer;
+}

@@ -3,11 +3,17 @@ import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import About from './Components/About';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import NoteState from './context/notes/NoteState';
+import Alert from './Components/Alert';
+
+
+
 
 function App() {
   const [mode, setMode] = useState('white');
+  
+
   // DARK MODE/ LIGHT MODE
   const changeMode = () => {
     const remove1 = Array.from(document.querySelectorAll('.fa-moon'));
@@ -33,17 +39,18 @@ function App() {
     }
   };
 
-
   return (
     <>
       <NoteState>
-        <Router>
+        <Router>      
+       
           <Navbar changeMode={changeMode} />
+          <Alert message="Your note has been deleted "/>
           <div className="container my-4">
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/about" element={<About />} />
-          </Routes>
+            <Routes>
+              <Route exact path="/" element={<Home  />} />
+              <Route exact path="/about" element={<About  />} />
+            </Routes>
           </div>
         </Router>
       </NoteState>
@@ -52,4 +59,3 @@ function App() {
 }
 
 export default App;
-

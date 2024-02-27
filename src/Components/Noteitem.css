@@ -1,10 +1,25 @@
-.customTry{
+.customTry {
    /* background-color: #de75f0 ;
    color: white; */
-   border: 2px dashed black;
-   background-color:  #e3e938;
-   color:rgb(15, 54, 89);
-   
+   border: 1px double rgb(231, 231, 246);
+   /* background: linear-gradient(30deg,rgb(75, 75, 237),rgb(133, 14, 133),rgb(238, 172, 50)); */
+   color: white;
+   background: linear-gradient(90deg,rgb(184, 224, 73),rgb(36, 164, 196));
+    /* background:linear-gradient(45deg,#4568DC,
+   #b06ab3) ;  */
+  
+}
+
+.font1 {
+   color: rgb(29, 29, 29);
+   font-weight: bold;
+   font-size: 1rem;
+}
+
+.circle1 {
+
+   width: auto;
+   text-align: end;
 }
 
 /* #7431FA */

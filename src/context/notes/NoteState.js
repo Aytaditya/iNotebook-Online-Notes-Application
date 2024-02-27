@@ -10,7 +10,7 @@ const NoteState=(props)=>{
               "_id": "65dafc0f5b604b3b5c043183",
               "user": "65da376d4e13e7f2f1b6c447",
               "title": "my first test",
-              "description": "this is a desciption",
+              "description": "this is a desciption and i like to say i like to add things in it and blah blah blah",
               "tag": "personal",
               "date": "2024-02-25T08:36:31.894Z",
               "__v": 0
@@ -29,7 +29,7 @@ const NoteState=(props)=>{
               "user": "65da376d4e13e7f2f1b6c447",
               "title": "bhai error aarha hain bhot zor se",
               "description": " bhai error kyu aarha hain",
-              "tag": "personal",
+              "tag": "random errorss",
               "date": "2024-02-25T10:50:07.775Z",
               "__v": 0
             },
@@ -74,18 +74,41 @@ const NoteState=(props)=>{
               "user": "65da376d4e13e7f2f1b6c447",
               "title": "this is my project",
               "description": "i love my project ",
-              "tag": "personal",
+              "tag": "gyudsg8deuhgiesdhyi",
               "date": "2024-02-25T19:25:13.468Z",
               "__v": 0
             }
           ]
-           
-           
           
     
     const [notes, setNotes] = useState(notesInitial)
+
+          //Add a note
+
+          const addNote=(title,description,tag)=>{
+            const note={
+              "_id": "65db94197aed04b5cef1f248",
+              "user": "65da376d4e13e7f2f1b6c447",
+              "title": title,
+              "description": description,
+              "tag": tag,
+              "date": "2024-02-25T19:25:13.468Z",
+              "__v": 0
+            };
+            setNotes(notes.concat(note))
+          }
+          //delete a note
+          const deleteNote=()=>{
+
+          }
+          //update a note
+          const editNote=()=>{
+            
+          }
+          
+
     return(
-        <noteContext.Provider value={{notes,setNotes}}>
+        <noteContext.Provider value={{notes,setNotes,addNote,deleteNote,editNote}}>
             {props.children}
         </noteContext.Provider>
 
