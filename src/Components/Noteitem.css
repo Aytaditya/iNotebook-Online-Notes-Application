@@ -1,12 +1,13 @@
 .customTry {
    /* background-color: #de75f0 ;
    color: white; */
-   border: 1px double rgb(231, 231, 246);
-   /* background: linear-gradient(30deg,rgb(75, 75, 237),rgb(133, 14, 133),rgb(238, 172, 50)); */
+   border: 2px double rgb(86, 86, 90);
+   /* background: linear-gradient(30deg,rgb(75, 75, 237),rgb(133, 14, 133),rgb(238, 172, 50));  */
    color: white;
-   background: linear-gradient(90deg,rgb(184, 224, 73),rgb(36, 164, 196));
-    /* background:linear-gradient(45deg,#4568DC,
-   #b06ab3) ;  */
+  
+    background:linear-gradient(90deg,#4568DC,
+   #b06ab3);    
+   /* rgb(184, 224, 73) */
   
 }
 
