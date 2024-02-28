@@ -1,19 +1,14 @@
 .customTry {
-   /* background-color: #de75f0 ;
-   color: white; */
-   border: 2px double rgb(86, 86, 90);
-   /* background: linear-gradient(30deg,rgb(75, 75, 237),rgb(133, 14, 133),rgb(238, 172, 50));  */
-   color: white;
-  
-    background:linear-gradient(90deg,#4568DC,
-   #b06ab3);    
-   /* rgb(184, 224, 73) */
+  background: linear-gradient(90deg,rgba(196, 36, 36, 0.728),rgba(0, 64, 255, 0.698));
+  color:rgb(249, 243, 243);
+  border:2px solid black;
+   
   
 }
 
 .font1 {
-   color: rgb(29, 29, 29);
-   font-weight: bold;
+   color: black;
+   
    font-size: 1rem;
 }
 

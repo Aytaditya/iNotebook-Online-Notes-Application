@@ -37,8 +37,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag })
     });
-    
-    
+
     const note = {
       "_id": "65db94197aed04b5cef7471f248",
       "user": "65da376d4e13e7f2f1b6c447",
