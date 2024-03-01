@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 export default function Notes() {
   // Assuming noteContext provides a notes array
   const { notes, getNotes } = useContext(noteContext);
-  const [note, setNote] = useState({ etitle: "", edescription: "", etag: "" })
+  const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "" })
 
   useEffect(() => {
     getNotes()
@@ -15,12 +15,14 @@ export default function Notes() {
 
   const updateNote = (currentNote) => {
     ref.current.click()
-    setNote({ etitle: currentNote.title, etag: currentNote.tag, edescription: currentNote.description })
+    setNote({ id:currentNote._id, etitle: currentNote.title, etag: currentNote.tag, edescription: currentNote.description })
 
   }
   const ref = useRef(null)
+  const refClose = useRef(null)
   const handleClick = (e) => {
     e.preventDefault()
+    refClose.current.click();
 
   }
 
@@ -63,7 +65,7 @@ export default function Notes() {
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" ref={refClose} class="btn btn-danger" data-bs-dismiss="modal">Close</button>
               <button type="button" class="btn btn-success" onClick={handleClick}>Update Note</button>
             </div>
 

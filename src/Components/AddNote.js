@@ -44,8 +44,8 @@ const AddNote = () => {
             <label for="description" className="form-label textbox input-lg">Description</label>
             <input type="text" className="form-control description my-3" id="desc" name="description" onChange={onChange} />
           </div>
-          <button type="submit" className="btn btn-success btn-sm my-3" onClick={handleClick} >Add a Note</button>
-          <button type="button" className="btn btn-success btn-sm speakbtn mx-3" onClick={speak}>Hear Your Description</button>
+          <button type="submit" className="btn btn-danger btn-sm my-3" onClick={handleClick} >Add a Note</button>
+          <button type="button" className="btn btn-danger btn-sm speakbtn mx-3" onClick={speak}>Hear Your Description</button>
           {/* <button className=" speakbtn" onClick={speak}>Submit</button> */}
         </form>
       </div>
