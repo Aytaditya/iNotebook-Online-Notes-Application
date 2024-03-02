@@ -37,16 +37,8 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag })
     });
-
-    const note = {
-      "_id": "65db94197aed04b5cef7471f248",
-      "user": "65da376d4e13e7f2f1b6c447",
-      "title": title,
-      "description": description,
-      "tag": tag,
-      "date": "2024-02-25T19:25:13.468Z",
-      "__v": 0
-    };
+    
+    const note=await response.json()
     setNotes(notes.concat(note))
     
   }
@@ -63,7 +55,7 @@ const NoteState = (props) => {
       },
      
     });
-    const json = await response.json();
+    const json =  response.json();
     console.log(json)
 
     const newNotes = notes.filter((note) => { return note._id !== id })
@@ -72,23 +64,39 @@ const NoteState = (props) => {
 
 
 
+
   //update a note
-  const editNote = async (id, title, description, tag) => {
-    await fetch(`${host}/api/notes/updatenote/${id}`, {
+//update a note
+const editNote = async (id, title, description, tag) => {
+  try {
+    const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
       method: 'PUT',
       headers: {
-          'Content-Type': 'application/json',
-          "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkYTM3NmQ0ZTEzZTdmMmYxYjZjNDQ3In0sImlhdCI6MTcwODgwNDQ1M30.w7rpwvlYXZBUMroM1KPZjr6KpxiykKl9sGA5aPkpcGo"
+        'Content-Type': 'application/json',
+        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkYTM3NmQ0ZTEzZTdmMmYxYjZjNDQ3In0sImlhdCI6MTcwODgwNDQ1M30.w7rpwvlYXZBUMroM1KPZjr6KpxiykKl9sGA5aPkpcGo"
       },
-      body: JSON.stringify({title, description, tag})
-  })
-  
-  getNotes()
+      body: JSON.stringify({ title, description, tag })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to update note: ${response.statusText}`);
+    }
+
+    // Wait for the request to complete before calling getNotes
+    await response.json();
+    
+    // Now, you can call getNotes
+    getNotes();
+  } catch (error) {
+    console.error('Error updating note:', error.message);
+    // Handle error as needed
   }
+};
+
 
 
   return (
-    <noteContext.Provider value={{ notes, setNotes, addNote, deleteNote, getNotes }}>
+    <noteContext.Provider value={{ notes, setNotes, addNote, deleteNote, getNotes,editNote }}>
       {props.children}
     </noteContext.Provider>
 

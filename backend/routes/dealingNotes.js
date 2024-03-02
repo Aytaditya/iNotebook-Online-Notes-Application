@@ -49,38 +49,44 @@ router.post('/addnote', fetchuser, [
     }
 });
 
-
-//                   ROUTER 3-Updating notes
+// ROUTER 3-Updating notes
 router.put('/updatenote/:id', fetchuser, async (req, res) => {
-
     try {
+        const { title, description, tag } = req.body;
 
-        const {title,description,tag}=req.body;
-    //creating a new note
-    const newNote={}
-    if(title){newNote.title=title};
-    if(description){newNote.description=description}
-    if(tag){newNote.tag=tag}
+        // Create a new note object with provided data
+        const newNote = {};
+        if (title) newNote.title = title;
+        if (description) newNote.description = description;
+        if (tag) newNote.tag = tag;
 
-    //find the note to be updated and update it
-    let note= await Notes.findById(req.params.id)
-    if(!note){return res.status(404).send("Not Found")}
+        // Find the note to be updated and verify ownership
+        let note = await Notes.findById(req.params.id);
 
-    // alow updating only if user owns the note
-    if(note.user.toString() !== req.user.id){
-        return res.status(401).send("Illegal Action ")
-    }
-    //updatin note after verification
-    note=await Notes.findByIdAndUpdate(req.params.id, {$set:newNote},{new:true})
-    res.json({note})
-        
+        if (!note) {
+            return res.status(404).json({ error: 'Note not found' });
+        }
+
+        // Allow updating only if the user owns the note
+        if (note.user.toString() !== req.user.id) {
+            return res.status(401).json({ error: 'Unauthorized action' });
+        }
+
+        // Update the note
+        note = await Notes.findByIdAndUpdate(req.params.id, { $set: newNote }, { new: true });
+
+        // Check if the update was successful
+        if (!note) {
+            return res.status(500).json({ error: 'Internal Server Error - Note not updated' });
+        }
+
+        res.json({ note });
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Internal Server Error');
-        
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-    
-})
+});
+
 
 //                         ROUTER 4- Deleting a note
 router.delete('/deletenote/:id', fetchuser, async (req, res) => {
