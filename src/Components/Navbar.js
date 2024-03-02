@@ -20,7 +20,7 @@ export default function Navbar(props) {
                             <Link className="nav-link active active1" to="/about"><i className="fa-solid fa-address-card"></i>  About Us</Link>
                         </li>
                         <li className="nav-item my-2 mx-2">
-                            <i class="fa-solid fa-moon nav-link active fa-lg" onClick={props.changeMode}></i>
+                            <i className="fa-solid fa-moon nav-link active fa-lg" onClick={props.changeMode}></i>
                         </li>
                     </ul>
                     <form className="d-flex" role="search">

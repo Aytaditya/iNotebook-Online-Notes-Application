@@ -35,13 +35,13 @@ const AddNote = () => {
             <input type="text col-xs-5" className="form-control" id="title" name="title" aria-describedby="emailHelp" onChange={onChange} />
           </div>
           <div className="mb-3 mx-4">
-            <label for="tag" className="form-label textbox"> Add Tag for Your Note</label>
+            <label htmlFor="tag" className="form-label textbox"> Add Tag for Your Note</label>
             <input type="text col-xs-3" className="form-control tag" id="tag" name="tag" onChange={onChange} />
           </div>
           </div>
          
           <div className="mb-3 my-2">
-            <label for="description" className="form-label textbox input-lg">Description</label>
+            <label htmlFor="description" className="form-label textbox input-lg">Description</label>
             <input type="text" className="form-control description my-3" id="desc" name="description" onChange={onChange} />
           </div>
           <button type="submit" className="btn btn-danger btn-sm my-3" onClick={handleClick} >Add a Note</button>
@@ -49,6 +49,7 @@ const AddNote = () => {
           {/* <button className=" speakbtn" onClick={speak}>Submit</button> */}
         </form>
       </div>
+      
     </div>
   )
 }

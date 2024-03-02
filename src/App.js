@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import About from './Components/About';
-import Background from './Components/Background';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState} from 'react';
 import NoteState from './context/notes/NoteState';
@@ -46,7 +46,7 @@ function App() {
         <Router>      
        
           <Navbar changeMode={changeMode} />
-          {/* <Alert message="Your note has been deleted "/> */}
+           <Alert message="Your note has been deleted "/> 
           
           <div className="container my-4">
             <Routes>
