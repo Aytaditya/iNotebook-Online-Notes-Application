@@ -13,19 +13,21 @@ export default function Navbar(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item mx-3">
+                        <li className="nav-item mx-2">
                             <Link className="nav-link active active1" aria-current="page" to="/"><i className="fa-solid fa-house " ></i> Home</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item mx-2">
                             <Link className="nav-link active active1" to="/about"><i className="fa-solid fa-address-card"></i>  About Us</Link>
                         </li>
-                        <li className="nav-item my-2 mx-2">
-                            <i className="fa-solid fa-moon nav-link active fa-lg" onClick={props.changeMode}></i>
-                        </li>
+                        
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-light" type="submit">Search</button>
+
+                    <form className="d-flex">
+                    <li className="nav-item my-2 mx-3 increasing">
+                             <i className="fa-solid fa-moon nav-link active fa-lg" onClick={props.changeMode}> Mode</i>
+                        </li>
+                    <a className="btn  btn-outline-light mx-2" href="/">Login</a>
+                        <a className="btn  btn-outline-warning mx-2" href="/">Sign Up</a>
                     </form>
                 </div>
             </div>

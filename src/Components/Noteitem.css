@@ -1,7 +1,8 @@
 .customTry {
-  background: linear-gradient(90deg,rgba(122, 121, 121, 0.652),rgba(115, 0, 255, 0.819));
+  background: linear-gradient(90deg,rgba(160, 158, 158, 0.652),rgba(115, 0, 255, 0.819));
   color:rgb(255, 255, 255);
   border:2px solid rgb(248, 235, 235);
+  border-radius: 15px;
    
   
 }

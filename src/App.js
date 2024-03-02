@@ -46,7 +46,7 @@ function App() {
         <Router>      
        
           <Navbar changeMode={changeMode} />
-           <Alert message="Your note has been deleted "/> 
+            <Alert message="Your note has been deleted "/>  
           
           <div className="container my-4">
             <Routes>

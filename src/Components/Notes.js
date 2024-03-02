@@ -41,7 +41,7 @@ const Notes = () => {
     <>
       <AddNote />
       <div className="row my-3">
-        <h1 className="colorchange1 my-4 editH1">Your Notes</h1>
+        <h1 className="colorchange1 my-4 editH1">Your Added Notes</h1>
         {notes.length === 0 && 'No Notes to display'}
         {notes.map((note) => (
           <Noteitem key={note._id} note={note} updateNote={updateNote} />
