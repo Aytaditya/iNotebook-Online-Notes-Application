@@ -24,10 +24,10 @@ export default function Navbar(props) {
 
                     <form className="d-flex">
                     <li className="nav-item my-2 mx-3 increasing">
-                             <i className="fa-solid fa-moon nav-link active fa-lg" onClick={props.changeMode}> Mode</i>
+                             <i className="fa-solid fa-moon nav-link active fa-lg" onClick={props.changeMode}></i>
                         </li>
-                    <a className="btn  btn-outline-light mx-2" href="/">Login</a>
-                        <a className="btn  btn-outline-warning mx-2" href="/">Sign Up</a>
+                    <Link className="btn  btn-outline-light mx-1 " to="/login">Login</Link>
+                        <Link className="btn  btn-outline-warning mx-1" to="/signup">Sign Up</Link>
                     </form>
                 </div>
             </div>

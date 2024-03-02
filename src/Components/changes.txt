@@ -1,0 +1,22 @@
+<div className="d-flex align-items-center justify-content-center vh-100">
+      <form className='container borderC w-100'>
+        <div className="row">
+          <div className="mb-3 col-md-6 mx-auto">
+            <h3 className='my-4'>Login into your Account</h3>
+            <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          </div>
+        </div>
+        <div className="row">
+          <div className="mb-3 col-md-6 mx-auto">
+            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+            <input type="password" className="form-control" id="exampleInputPassword1" />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-6 mx-auto text-center">
+            <button type="submit" className="btn btn-danger my-3">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>

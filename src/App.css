@@ -24,7 +24,7 @@ i{
 .editH{
  
   text-align: start;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   
   /* background: linear-gradient(90deg,#008cff,
   #da0886,rgb(108, 7, 231));
@@ -36,7 +36,7 @@ i{
  
 }
 .editH1{
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   text-align: center;
   /* background: linear-gradient(90deg,#008cff,
   #da0886,pink);
@@ -52,4 +52,23 @@ i{
 .increasing{
   color: white;
   list-style: none;
+}
+.borderC{
+border: 1px solid white;
+  /* border-radius: 25px ; */
+  /* align-items: center;
+  justify-content: center;
+  width:100vw;
+  height:100vh;
+  background:url(image.jpg);
+  background-size: cover;
+  color:black;
+   */
+   width: 100vw;
+   height:91vh;
+   overflow: hidden;
+   margin-top: -24px;
+   background:url(image.jpg);
+  background-size: cover;
+  color:black;
 }
