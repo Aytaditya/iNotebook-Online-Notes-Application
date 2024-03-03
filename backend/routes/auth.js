@@ -99,7 +99,7 @@ router.post('/login', [
     body('email', 'Enter a valid Email').isEmail(),
     body('password', 'Password cannot be blank').exists()
 ], async (req, res) => {
-
+        let success=false;
     //sending back error if not true
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
@@ -113,7 +113,7 @@ router.post('/login', [
         let user = await User.findOne({ email })
         // returning bad response if user does not exist in database
         if (!user) {
-            return res.status(400).json({ error: "Wrong Credentials Try Again" })
+            return res.status(400).json({error: "Wrong Credentials Try Again" })
         }
         //comparing entered password to user password 
         //passwordCompare will return true false 
@@ -121,7 +121,7 @@ router.post('/login', [
         const passwordCompare = await bcrypt.compare(password, user.password)
 
         if (!passwordCompare) {
-            return res.status(400).json({ error: "Wrong Credentials Try Again" })
+            return res.status(400).json({success, error: "Wrong Credentials Try Again" })
         }
         const data = {
             user: {
@@ -129,7 +129,8 @@ router.post('/login', [
             }
         }
         const authToken = jwt.sign(data, JWT_SECRET)
-        res.json({ authToken })
+        success=true;
+        res.json({ success,authToken })
 
     } catch (error) {
         console.error(error.message)

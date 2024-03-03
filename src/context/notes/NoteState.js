@@ -65,7 +65,6 @@ const NoteState = (props) => {
 
 
 
-  //update a note
 //update a note
 const editNote = async (id, title, description, tag) => {
   try {
@@ -74,6 +73,7 @@ const editNote = async (id, title, description, tag) => {
       headers: {
         'Content-Type': 'application/json',
         "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkYTM3NmQ0ZTEzZTdmMmYxYjZjNDQ3In0sImlhdCI6MTcwODgwNDQ1M30.w7rpwvlYXZBUMroM1KPZjr6KpxiykKl9sGA5aPkpcGo"
+       
       },
       body: JSON.stringify({ title, description, tag })
     });

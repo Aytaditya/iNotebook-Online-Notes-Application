@@ -5,7 +5,7 @@ const AddNote = () => {
   const context = useContext(noteContext);
   const { addNote } = context;
 
-  const [note, setNote] = useState({ title: "", description: "", tag: "Default tag" })
+  const [note, setNote] = useState({ title: "", description: "", tag: "default tag" })
 
   const speak = () => {
     //function applied on id
@@ -18,7 +18,7 @@ const AddNote = () => {
   const handleClick = (e) => {
     e.preventDefault()
     addNote(note.title, note.description, note.tag);
-    setNote({ title: "", description: "", tag: "" })
+    setNote({ title: "", description: "", tag: "default tag" })
   }
 
   const onChange = (e) => {

@@ -28,7 +28,8 @@ const Notes = () => {
     if (note.id && note.etitle && note.edescription && note.etag) {
       editNote(note.id, note.etitle, note.edescription, note.etag);
       setModalOpen(false); // Close the modal after updating
-    } else {
+    } 
+    else {
       console.error('One or more values are undefined.');
     }
   };
