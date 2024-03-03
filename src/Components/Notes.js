@@ -2,14 +2,22 @@ import React, { useContext, useEffect, useState } from 'react';
 import noteContext from '../context/notes/noteContext';
 import Noteitem from './Noteitem';
 import AddNote from './AddNote';
+import { useNavigate } from 'react-router-dom';
 
 const Notes = () => {
   const { notes, getNotes, editNote } = useContext(noteContext);
   const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "" });
   const [modalOpen, setModalOpen] = useState(false);
+  let navigate = useNavigate();
 
   useEffect(() => {
-    getNotes();
+    if(localStorage.getItem('token')){
+      getNotes();
+    }
+    else{
+      navigate("/login")
+    }
+    
     //eslint-disable-next-line
   }, []);
 

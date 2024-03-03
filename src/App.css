@@ -67,8 +67,25 @@ border: 1px solid white;
    width: 100vw;
    height:91vh;
    overflow: hidden;
-   margin-top: -24px;
+   margin-top: -80px;
    background:url(image.jpg);
   background-size: cover;
   color:black;
+}
+/* #FFC107 */
+.borderC2{
+  border: 2px solid white;
+  margin-top: -80px;
+  height:93vh;
+  width: 99.25vw;
+  background:url(signup.jpg);
+  background-size: cover;
+  color:black ;
+  /* font-weight: bold; */
+  /* text-shadow: 0.5px 0.5px black; */
+  
+}
+
+.containerShift1{
+  padding-top: 25px;
 }

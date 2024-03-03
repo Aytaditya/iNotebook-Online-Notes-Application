@@ -23,6 +23,7 @@ const JWT_SECRET = 'adityaisgood';
 //creating a user using POST "/api/auth/createuser"
 //use router.post not roter.get so that the password is safe
 //router.post gives safty
+
 //                    ROUTER-1
 router.post('/createuser', [
     //for correct entry checking though express validator 
@@ -30,6 +31,7 @@ router.post('/createuser', [
     body('name', 'Name must be atleast 6 characters long').isLength({ min: 6 }),
     body('password', 'Password must be atleast * characters long').isLength({ min: 8 })
 ], async (req, res) => {
+    let success=false
 
     //     console.log(req.body)
     //   const user=User(req.body);
@@ -39,7 +41,7 @@ router.post('/createuser', [
     //       or 
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ success,errors: errors.array() });
     }
     //simply if errors is not empty return error else save data 
     try {
@@ -47,7 +49,7 @@ router.post('/createuser', [
         // before creating user we have to check if there already exist a user of this name
         let user = await User.findOne({ email: req.body.email });
         if (user) {
-            return res.status(400).json({ error: "Account already exist" })
+            return res.status(400).json({success, error: "Account already exist" })
         }
 
 
@@ -82,7 +84,8 @@ router.post('/createuser', [
         //jwt.sign is a sunc method hence dont need to add await
         const authToken = jwt.sign(data, JWT_SECRET)
         // if we add {} we will be able to send response as authToken:
-        res.json({ authToken })
+        success=true
+        res.json({ success,authToken })
 
 
     }
