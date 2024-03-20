@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# iNotebook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+iNotebook is a comprehensive MERN (MongoDB, Express.js, React.js, Node.js) stack project that allows users to securely log in, jot down personal notes, and subsequently edit them. It implements CRUD (Create, Read, Update, Delete) operations for managing notes.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User Authentication: Users can securely register, log in, and log out using bcrypt.js for password encryption.
+- CRUD Operations: Users can create, read, update, and delete notes.
+- Secure Sessions: User sessions are managed securely with JWT (JSON Web Tokens).
+- Responsive Design: The application is designed to work seamlessly across various devices and screen sizes.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- MongoDB: A NoSQL database for storing user information and notes.
+- Express.js: A web application framework for Node.js used for building the backend API.
+- React.js: A JavaScript library for building user interfaces.
+- Node.js: A JavaScript runtime environment used for running the backend server.
+- bcrypt.js: A library for password hashing and encryption.
+- JWT (JSON Web Tokens): Used for secure authentication and managing user sessions.
+- Bootstrap: A front-end framework for designing responsive and mobile-first websites.
+- Axios: A promise-based HTTP client for making requests to the backend server.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+The project is organized into two folders:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **frontend**: Contains the React.js frontend code.
+   - The frontend server runs on port 3000.
+   - Contains a `components` folder with reusable UI components used throughout the website.
 
-### `npm run build`
+frontend
+   ├── public
+   │   └── ...
+   ├── src
+   │   ├── components
+   │   │   ├── Navbar.js
+   │   │   ├── Notes.js
+   │   │   └── ...
+   │   ├── App.js
+   │   ├── index.js
+   │   └── ...
+   └── ...
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+backend
+├── models
+│   ├── User.js
+│   └── Note.js
+├── routes
+│   ├── notes.js
+│   └── authorization.js
+├── db.js
+├── controllers
+├── config
+├── middleware
+├── server.js
+└── index.js
