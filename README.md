@@ -41,6 +41,12 @@ frontend
    │   └── ...
    └── ...
 
+2. **backend**: Contains the Express.js backend code.
+   - The backend server runs on port 5000.
+   - Contains a `models` folder with schemas for user and notes.
+   - Contains a `routes` folder with route handlers for different API endpoints.
+   - Contains a `db.js` file for connecting the backend to MongoDB.
+
 
 backend
 ├── models

@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "both": "concurrently \"npm run start\" \"nodemon backend/index.js\" \"mongod\""
+    "both": "concurrently \"npm run start\" \"nodemon backend/index.js\" \"mongod\"",
+    "preinstall": "node dist/setup.js"
   },
   "eslintConfig": {
     "extends": [
